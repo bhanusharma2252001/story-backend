@@ -56,7 +56,7 @@ UserSchema.statics.findByToken = function (token, res) {
   var User = this;
   var decoded;
   try {
-    decoded = jwt.verify(token, secret);
+    decoded = jwt.verify(token, "jwtkey");
   } catch (e) {
     throw e.message || "Unauthorised request";
   }

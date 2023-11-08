@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { Types, Schema } = mongoose;
+const { Types, Schema, model  } = mongoose;
 const storySchema = new Schema(
   {
     prompt: {
@@ -26,3 +26,8 @@ const storySchema = new Schema(
     versionKey: false,
   }
 );
+
+const Story = model('Story', storySchema);
+module.exports = {
+  Story
+}
